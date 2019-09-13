@@ -1,0 +1,23 @@
+{% load staticfiles %}
+
+<head>
+    <title>Title</title>
+</head>
+<body>
+    {{ pips }}
+    <i><h1> !-hello world-! </h1></i>
+
+    {% for name in pips %}
+        {% if name.0 != 'E' %}
+            <i>{{ name }}</i><br>
+        {% else %}
+            <i> hello world </i><br>
+        {% endif %}
+    {% endfor %}
+<img src="{% static 'imageee.jpg' %}" width="50%" height="50%">
+
+{% for i in ll %}
+    {{ i|add:2 }},
+{% endfor %}
+</body>
+</html>
