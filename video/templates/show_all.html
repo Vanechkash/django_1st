@@ -13,6 +13,11 @@
                 <h2> {{ comment.text }}</h2><br>
             {% endif %}
         {% endfor %}
+    <form action="/hello/addcomment/">
+        <input type="text" name="id" hidden value="{{ video.id }}">
+        <textarea rows="4" cols="50" name="comment_tx"></textarea><br>
+        <input type="submit" value="submit"><br>
+    </form>
     {% endfor %}
 </body>
 </html>
