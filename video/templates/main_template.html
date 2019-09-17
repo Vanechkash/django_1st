@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="header">
+        <ul class="nav nav-pills">
+      <li class="nav-item">
+        <a class="nav-link active" href="/reg/login">Login</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/reg/logout">Logout</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/reg/register">Register</a>
+      </li>
+            <li class="nav-item">
+                <a class="nav-link">{% block username %}{% endblock %}</a>
+            </li>
+    </ul>
+</div>
+    {% block show_all %}
+    {% endblock %}
+
+    {% block register %}
+    {% endblock %}
+</body>
+</html>

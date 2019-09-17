@@ -14,13 +14,11 @@ def show_all(request):
     videos = Video.objects.all()
     comments = Comment.objects.all()
     return render(request, 'show_all.html', {'videos':videos,
-                  'comments':comments})
+                  'comments':comments}, request.user.username)
 
-def addcomment(request):
-    #print(request.GET['comment_tx'])
-    #print(request.GET['id'])
-    video = Video.objects.get(id=request.GET['id'])
-    newcomment = Comment(text=request.GET['comment_tx'], video_id=video)
+def addcomment(request, id):
+    video = Video.objects.get(id=id)
+    newcomment = Comment(text=request.GET['comment'], video_id=video)
     newcomment.save()
     return redirect('/')
 # Create your views here.
